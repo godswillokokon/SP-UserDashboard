@@ -1,14 +1,29 @@
 {
-  "name": "myapp",
+  "name": "SP-USERDASHBOARD",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "antd": "4.1.4",
+    "axios": "0.19.2",
+    "localforage": "1.7.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-loading-skeleton": "2.0.1",
+    "react-redux": "7.2.0",
+    "react-router-dom": "5.1.2",
+    "react-scripts": "3.4.1",
+    "react-toastify": "5.5.0",
+    "redux": "4.0.5",
+    "redux-devtools-extension": "2.13.8",
+    "redux-logger": "3.0.6",
+    "redux-persist": "6.0.0",
+    "redux-promise-middleware": "6.1.2",
+    "redux-thunk": "2.3.0",
+    "source-map-explorer": "2.4.2",
+    "styled-components": "5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
