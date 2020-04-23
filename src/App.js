@@ -1,5 +1,5 @@
 import React from "react";
-import Routes from "./routes";
+import Routes from "./pages";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
