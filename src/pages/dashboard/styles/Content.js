@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import Colors from "../../../constants/Colors";
 
 const Content = styled.section`
-	background-color: #f8f8fb;
-	padding: 7%;
-	padding-top: 80px;
-	padding-bottom: 100px;
 	overflow-y: auto;
+	margin: auto;
+	width: 100%;
+	min-height: 80vh;
+	background: #ffffff;
+	box-shadow: 0px 4px 10px rgba(81, 92, 111, 0.12);
 	@media only screen and (max-width: 720px) {
 		padding-top: 100px;
 	}

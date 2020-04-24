@@ -2,8 +2,13 @@ import styled from "styled-components";
 import Colors from "../../../constants/Colors";
 
 const SideBar = styled.section`
-	display: flex;
-	flex-direction: column;
+	flex: 0 0 300px;
+	max-width: 300px;
+	min-width: 300px;
+	width: 300px;
+	box-shadow: 0px 4px 9px rgba(81, 92, 111, 0.12);
+	height: 485px;
+	margin: auto;
 	background-color: #ffffff;
 	color: ${Colors.textColor};
 	box-sizing: border-box;
@@ -25,7 +30,6 @@ const SideBar = styled.section`
 SideBar.Header = styled.header`
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	align-content: center;
 	height: 60px;
 	background-color: #ffffff;
@@ -35,6 +39,10 @@ SideBar.Header = styled.header`
 		font-size: 12px;
 		line-height: 20px;
 		color: #fcad0a;
+		margin: 0;
+	}
+	.logout {
+		margin: 0;
 	}
 	@media only screen and (max-width: 720px) {
 		padding: 0 30px;
@@ -44,7 +52,6 @@ SideBar.Header = styled.header`
 `;
 
 SideBar.Avatar = styled.img`
-  margin: auto;
   background-color: ${Colors.customGrey}
   height: 60px;
   width: 60px;
