@@ -15,22 +15,10 @@ const DashBoardBody = styled.section`
       color: #515c6f;
       text-transform: capitalize;
     }
-
-    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector,
-    .ant-select-single:not(.ant-select-customize-input)
-      .ant-select-selector:focus {
-      border: none !important;
-    }
-
-    .ant-select-selection-selected-value {
-      color: #515c6f;
-      font-weight: 500;
-      font-size: 14.5341px;
-    }
   }
 `;
 
-DashBoardBody.WalletBanner = styled.div`
+DashBoardBody.Banner = styled.div`
   height: 256.95px;
   .background {
     height: 249px;
@@ -39,6 +27,7 @@ DashBoardBody.WalletBanner = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: start;
+
     .wallet-header {
       margin: 2rem;
       display: flex;
@@ -106,9 +95,9 @@ DashBoardBody.WalletBanner = styled.div`
     font-weight: 500;
     font-size: 15px;
     line-height: 20px;
-    /* or 133% */
+
     text-align: center;
-    /* Primary Color */
+
     color: #fd901c;
   }
 `;
@@ -118,17 +107,6 @@ DashBoardBody.WalletRecentActivity = styled.div`
   margin-bottom: 2rem;
   card-container {
     padding-bottom: 1rem;
-  }
-  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector,
-  .ant-select-single:not(.ant-select-customize-input)
-    .ant-select-selector:focus {
-    border: none !important;
-  }
-
-  .ant-select-selection-selected-value {
-    color: #515c6f;
-    font-weight: 500;
-    font-size: 14.5341px;
   }
 
   .transaction-card {
@@ -180,6 +158,160 @@ DashBoardBody.WalletRecentActivity = styled.div`
     font-size: 11px;
     line-height: 13px;
     color: #515c6f;
+  }
+`;
+
+DashBoardBody.SoldCard = styled.div`
+  width: 283.15px;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  .sold-card .image,
+  .sold-card .image img {
+    width: 100%;
+  }
+  h1 {
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 27px;
+    color: #515c6f;
+  }
+`;
+
+DashBoardBody.Row = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+`;
+
+DashBoardBody.SettingBanner = styled.div`
+  .background {
+    height: 221px;
+    background: #c2c2c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 54px;
+      margin: 0;
+      color: #ffffff;
+      text-align: center;
+    }
+    h2 {
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 13px;
+      color: #ffffff;
+      text-align: center;
+    }
+  }
+  .circle {
+    width: 150px;
+    height: 150px;
+    background: #ffffff;
+    box-shadow: -7px 7px 20px rgba(81, 92, 111, 0.12);
+    border-radius: 100%;
+    position: absolute;
+    top: 29%;
+    left: 36%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 767px) {
+      top: 49%;
+      left: 33%;
+    }
+  }
+`;
+
+DashBoardBody.Form = styled.form`
+  margin-top: 9rem;
+  padding-bottom: 1rem;
+  .input-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .input-control {
+      width: 48%;
+      display: flex;
+      flex-direction: column;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+  .input-control {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .input-control input {
+    color: #515c6f;
+    border: 1px solid #c1c1c1;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: #fbfbfb;
+    font-size: 16px;
+    height: 38px;
+    padding: 0rem 1rem;
+    :focus {
+      outline-style: none;
+    }
+  }
+
+  .prefix input {
+    border-radius: 0px 10px 10px 0px;
+    width: 82%;
+    border: 1px solid #c1c1c1;
+    border-bottom: 0;
+    border-top: 0;
+    border-right: 0;
+
+    @media screen and (max-width: 767px) {
+      width: 75%;
+    }
+  }
+  .prefix span {
+    color: #515c6f;
+    padding: 0rem 1rem;
+    box-sizing: border-box;
+
+    background: #fbfbfb;
+    font-size: 16px;
+  }
+  .prefix {
+    border-radius: 10px;
+    border-right: 0;
+    border: 1px solid #c1c1c1;
+    background: #fbfbfb;
+  }
+  .input-control label {
+    font-size: 18px;
+    line-height: 27px;
+    color: #515c6f;
+    margin-bottom: 5px;
+  }
+  button {
+    border: none;
+    background: #f9a602;
+    border-radius: 10px;
+    width: 229px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    height: 48px;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
   }
 `;
 export default DashBoardBody;
