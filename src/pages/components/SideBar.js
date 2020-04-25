@@ -10,7 +10,7 @@ const SideBar = () => {
 				<SideBarWrapper.Avatar src={Avatar} alt="avatar" />
 				<div style={{ display: "flex", flexDirection: "column" }}>
 					<h4 className="user-name">Erim Anna Ndoma</h4>
-					<h5>Logout</h5>
+					<h5 className="logout">Logout</h5>
 				</div>
 			</SideBarWrapper.Header>
 		</SideBarWrapper>
