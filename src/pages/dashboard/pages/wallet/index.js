@@ -14,7 +14,7 @@ function handleChange(value) {
 export default function Wallet() {
   return (
     <DashBoardBody>
-      <DashBoardBody.WalletBanner>
+      <DashBoardBody.Banner>
         <div className="background">
           <div className="wallet-header">
             <div className="circle">
@@ -36,7 +36,7 @@ export default function Wallet() {
         <div className="fund-wallet">
           <span>Fund Wallet</span>
         </div>
-      </DashBoardBody.WalletBanner>
+      </DashBoardBody.Banner>
       <DashBoardBody.WalletRecentActivity>
         <div className="row-header">
           <h1>YOUR RECENT ACTIVITIES</h1>
