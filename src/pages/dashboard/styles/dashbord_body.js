@@ -45,6 +45,9 @@ DashBoardBody.Banner = styled.div`
     justify-content: space-between;
     align-items: start;
 
+    @media screen and (max-width: 767px) {
+      overflow: scroll;
+    }
     .wallet-header {
       margin: 2rem;
       display: flex;
@@ -98,7 +101,7 @@ DashBoardBody.Banner = styled.div`
   .fund-wallet {
     position: absolute;
     right: 10%;
-    top: 41%;
+    top: 53%;
     width: 134px;
     height: 45px;
     background: #ffffff;
@@ -116,6 +119,9 @@ DashBoardBody.Banner = styled.div`
     text-align: center;
 
     color: #fd901c;
+    @media screen and (max-width: 767px) {
+      top: 70%;
+    }
   }
 `;
 
@@ -233,7 +239,7 @@ DashBoardBody.SettingBanner = styled.div`
     box-shadow: -7px 7px 20px rgba(81, 92, 111, 0.12);
     border-radius: 100%;
     position: absolute;
-    top: 29%;
+    top: 42%;
     left: 36%;
     display: flex;
     justify-content: center;
