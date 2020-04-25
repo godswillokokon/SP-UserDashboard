@@ -18,6 +18,23 @@ const DashBoardBody = styled.section`
   }
 `;
 
+DashBoardBody.Header = styled.div`
+  margin: 1rem 0rem;
+  height: 66px;
+  width: inherit;
+  background: #fcad0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-weight: 600;
+    font-size: 26px;
+    color: #ffffff;
+    margin: 0;
+  }
+`;
+
 DashBoardBody.Banner = styled.div`
   height: 256.95px;
   .background {
