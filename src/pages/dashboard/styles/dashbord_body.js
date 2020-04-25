@@ -182,4 +182,28 @@ DashBoardBody.WalletRecentActivity = styled.div`
     color: #515c6f;
   }
 `;
+
+DashBoardBody.SoldCard = styled.div`
+  width: 283.15px;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  .sold-card .image,
+  .sold-card .image img {
+    width: 100%;
+  }
+  h1 {
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 27px;
+    color: #515c6f;
+  }
+`;
+
+DashBoardBody.Row = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+`;
 export default DashBoardBody;
