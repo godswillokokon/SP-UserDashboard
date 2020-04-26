@@ -3,16 +3,39 @@ import { Link } from "react-router-dom";
 import SideBarWrapper from "../dashboard/styles/SideBar";
 import Avatar from "../../assets/img/avatar.png";
 
-const SideBar = () => {
+const SideBar = ({ userData, showSideBar, setShowSideBar }) => {
 	return (
 		<SideBarWrapper>
-			<SideBarWrapper.Header>
-				<SideBarWrapper.Avatar src={Avatar} alt="avatar" />
-				<div style={{ display: "flex", flexDirection: "column" }}>
-					<h4 className="user-name">Erim Anna Ndoma</h4>
-					<h5 className="logout">Logout</h5>
-				</div>
-			</SideBarWrapper.Header>
+			<SideBarWrapper.InnerCont>
+				<SideBarWrapper.Header>
+					<SideBarWrapper.Avatar src={Avatar} alt="avatar" />
+					<div style={{ display: "flex", flexDirection: "column" }}>
+						<h4 className="user-name">Erim Anna Ndoma</h4>
+						<h5 className="logout">Logout</h5>
+					</div>
+				</SideBarWrapper.Header>
+				<SideBarWrapper.Links>
+					{TopLinks.map((link, index) => (
+						<li
+							key={index}
+							className={
+								window.location.pathname === `${link.path}` ? "active" : ""
+							}
+						>
+							<img src={link.icon} alt={link.name} />
+							<Link
+								to={link.path ? `${link.path}` : ""}
+								onClick={() => {
+									if (link.action) link.action();
+									setShowSideBar(!showSideBar);
+								}}
+							>
+								{link.name}
+							</Link>
+						</li>
+					))}
+				</SideBarWrapper.Links>
+			</SideBarWrapper.InnerCont>
 		</SideBarWrapper>
 	);
 };
@@ -52,7 +75,7 @@ const TopLinks = [
 	},
 	{
 		name: "Account Setting",
-		path: "/account-setting",
+		path: "/account-settings",
 		icon: require("../../assets/img/account.png"),
 		matchPaths: ["/account-setting", "/change-password"],
 	},

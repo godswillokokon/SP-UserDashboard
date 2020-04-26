@@ -2,13 +2,9 @@ import styled from "styled-components";
 import Colors from "../../../constants/Colors";
 
 const SideBar = styled.section`
-	flex: 0 0 300px;
-	max-width: 300px;
-	min-width: 300px;
-	width: 300px;
-	box-shadow: 0px 4px 9px rgba(81, 92, 111, 0.12);
-	height: 485px;
-	margin: auto;
+	padding: 24% 7%;
+	display: flex;
+	flex-direction: column;
 	background-color: #ffffff;
 	color: ${Colors.textColor};
 	box-sizing: border-box;
@@ -26,23 +22,30 @@ const SideBar = styled.section`
 		}
 	}
 `;
+SideBar.InnerCont = styled.section`
+	box-shadow: 0px 4px 9px rgba(81, 92, 111, 0.12);
+`;
 
 SideBar.Header = styled.header`
 	display: flex;
 	flex-direction: row;
 	align-content: center;
+	justify-content: space-around;
 	height: 60px;
 	background-color: #ffffff;
 	color: ${Colors.headerColor};
-	margin: 40px 0;
+	margin: 9px 0 34px 0;
+	padding-right: 67px;
 	.user-name {
-		font-size: 12px;
+		font-size: 15px;
 		line-height: 20px;
 		color: #fcad0a;
 		margin: 0;
+		margin-top: 5px;
 	}
 	.logout {
 		margin: 0;
+		margin-top: 13px;
 	}
 	@media only screen and (max-width: 720px) {
 		padding: 0 30px;
@@ -83,23 +86,27 @@ SideBar.Links = styled.ul`
 	flex-direction: column;
 	justify-content: space-between;
 	overflow-y: auto;
-	padding: 20%;
-	padding-bottom: 20vh;
+	padding-bottom: 6vh;
+	padding-left: 25px;
 	box-sizing: border-box;
 	font-family: "GT Walsheim", -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 	li {
-		opacity: 0.3;
+		opacity: 0.5;
 		display: flex;
 		align-content: center;
+		margin: 8px;
+		padding: 12px;
 	}
 	li.active {
 		opacity: 1;
+		border-left: 3px solid #fcad0a;
 	}
 	a {
-		color: #fff;
+		color: #515c6f;
 		font-weight: 400;
 		font-size: 16px;
+		text-decoration: none;
 	}
 	img {
 		width: 16px;

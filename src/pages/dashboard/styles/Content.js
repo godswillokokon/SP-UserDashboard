@@ -4,14 +4,19 @@ import Colors from "../../../constants/Colors";
 
 const Content = styled.section`
   overflow-y: auto;
-  margin: auto;
-  width: 100%;
-  min-height: 80vh;
   background: #ffffff;
-  box-shadow: 0px 4px 10px rgba(81, 92, 111, 0.12);
+  padding: 4%;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  padding-left: 0;
+
   @media only screen and (max-width: 720px) {
     padding-top: 100px;
   }
+`;
+
+Content.InnerCont = styled.section`
+  box-shadow: 0px 4px 10px rgba(81, 92, 111, 0.12);
 `;
 
 Content.Header = styled.header`

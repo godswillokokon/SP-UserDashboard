@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import Colors from "../../../constants/Colors";
 
 const DashBoardBody = styled.section`
   margin: 2rem 2rem;
@@ -99,9 +97,8 @@ DashBoardBody.Banner = styled.div`
     }
   }
   .fund-wallet {
-    position: absolute;
-    right: 10%;
-    top: 53%;
+    margin: -3% 0 0 82%;
+    position: static;
     width: 134px;
     height: 45px;
     background: #ffffff;
@@ -238,9 +235,8 @@ DashBoardBody.SettingBanner = styled.div`
     background: #ffffff;
     box-shadow: -7px 7px 20px rgba(81, 92, 111, 0.12);
     border-radius: 100%;
-    position: absolute;
-    top: 42%;
-    left: 36%;
+    position: static;
+    margin: -9% 0 0 6%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -252,7 +248,7 @@ DashBoardBody.SettingBanner = styled.div`
 `;
 
 DashBoardBody.Form = styled.form`
-  margin-top: 9rem;
+  margin-top: 3rem;
   padding-bottom: 1rem;
   .input-group {
     display: flex;
