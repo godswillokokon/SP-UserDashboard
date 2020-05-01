@@ -1,7 +1,7 @@
 import db from "./db";
 
 const Auth = {
-  user: {}
+  user: {},
   token: null,
   isLoggedIn: () => (Auth.token ? true : false),
 
@@ -10,7 +10,7 @@ const Auth = {
       .getItem("User")
       .then((User) => {
         Auth.token = User.token;
-        Auth.user = User.user
+        Auth.user = User.user;
       })
       .catch((err) => console.error(err));
   },
