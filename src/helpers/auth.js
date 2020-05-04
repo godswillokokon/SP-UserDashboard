@@ -16,11 +16,11 @@ const Auth = {
   },
 
   logoutRedirect: () => {
-    window.location.assign("/");
+    window.location.assign("https://spread-staging.netlify.com/");
   },
 
   logout: () => {
-    db.removeItem("token", Auth.token);
+    db.removeItem("User");
     Auth.logoutRedirect();
   },
 };

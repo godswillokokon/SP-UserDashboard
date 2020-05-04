@@ -2,16 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SideBarWrapper from "../dashboard/styles/SideBar";
 import Avatar from "../../assets/img/avatar.png";
+import Auth from "../../helpers/auth";
 
 const SideBar = ({ userData, showSideBar, setShowSideBar }) => {
 	return (
 		<SideBarWrapper>
 			<SideBarWrapper.InnerCont>
 				<SideBarWrapper.Header>
-					<SideBarWrapper.Avatar src={Avatar} alt="avatar" />
+					<SideBarWrapper.Avatar
+						src={userData?.picture || Avatar}
+						alt="avatar"
+					/>
 					<div style={{ display: "flex", flexDirection: "column" }}>
-						<h4 className="user-name">Erim Anna Ndoma</h4>
-						<h5 className="logout">Logout</h5>
+						<h4 className="user-name">{userData?.name || "User"}</h4>
+						<h5 className="logout" onClick={() => Auth.logout()}>
+							Logout
+						</h5>
 					</div>
 				</SideBarWrapper.Header>
 				<SideBarWrapper.Links>

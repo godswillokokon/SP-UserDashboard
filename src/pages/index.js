@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -12,8 +12,15 @@ import SoldProperties from "./dashboard/pages/soldProp";
 import AccountSetting from "./dashboard/pages/settings";
 import ChangePassword from "./dashboard/pages/change_password";
 import NoMatchPage from "./notFound";
+import Auth from "../helpers/auth";
 
 const App = () => {
+  useEffect(() => {
+    if (!Auth.isLoggedIn()) {
+      window.location = "https://spread-staging.netlify.app/";
+    }
+    console.log(Auth.user);
+  }, []);
   return (
     <Router>
       <Layout>

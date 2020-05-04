@@ -46,6 +46,7 @@ SideBar.Header = styled.header`
 	.logout {
 		margin: 0;
 		margin-top: 13px;
+		cursor: pointer;
 	}
 	@media only screen and (max-width: 720px) {
 		padding: 0 30px;
