@@ -1,8 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { ReactComponent as NotFoundSvg } from "../../assets/img/404.svg";
-import Button from "../../components/Button";
+import { ReactComponent as NotFoundSvg } from "assets/img/404.svg";
+import Button from "components/Button";
 
 const Container = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Colors from "../../../constants/Colors";
+import Colors from "constants/Colors";
 
 const Content = styled.section`
   overflow-y: auto;
@@ -12,6 +12,8 @@ const Content = styled.section`
 
   @media only screen and (max-width: 720px) {
     padding-top: 100px;
+    overflow-x: hidden;
+    padding-left: 16.4375px;
   }
 `;
 

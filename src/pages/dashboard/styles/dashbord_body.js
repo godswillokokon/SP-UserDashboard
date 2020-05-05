@@ -117,7 +117,7 @@ DashBoardBody.Banner = styled.div`
 
     color: #fd901c;
     @media screen and (max-width: 767px) {
-      top: 70%;
+      margin-left: 59%;
     }
   }
 `;

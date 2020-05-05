@@ -1,10 +1,10 @@
 import React from "react";
 import { Select } from "antd";
 import DashBoardBody from "../../styles/dashbord_body";
-import sold1 from "../../../../assets/img/sold1.png";
-import sold2 from "../../../../assets/img/sold2.png";
-import sold3 from "../../../../assets/img/sold3.png";
-import sold4 from "../../../../assets/img/sold4.png";
+import sold1 from "assets/img/sold1.png";
+import sold2 from "assets/img/sold2.png";
+import sold3 from "assets/img/sold3.png";
+import sold4 from "assets/img/sold4.png";
 
 const { Option } = Select;
 function handleChange(value) {

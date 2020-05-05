@@ -1,13 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SideBarWrapper from "../dashboard/styles/SideBar";
-import Avatar from "../../assets/img/avatar.png";
-import Auth from "../../helpers/auth";
+import Avatar from "assets/img/avatar.png";
+import Auth from "helpers/auth";
+import { ReactComponent as CloseIcon } from "assets/img/close-icon-dark.svg";
 
 const SideBar = ({ userData, showSideBar, setShowSideBar }) => {
 	return (
-		<SideBarWrapper>
+		<SideBarWrapper className={showSideBar ? "open" : ""}>
 			<SideBarWrapper.InnerCont>
+				<SideBarWrapper.TogggleButton
+					onClick={() => setShowSideBar(!showSideBar)}
+				>
+					<CloseIcon width={15} />
+				</SideBarWrapper.TogggleButton>
 				<SideBarWrapper.Header>
 					<SideBarWrapper.Avatar
 						src={userData?.picture || Avatar}

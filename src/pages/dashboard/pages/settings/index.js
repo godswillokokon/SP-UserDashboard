@@ -1,6 +1,6 @@
 import React from "react";
 import DashBoardBody from "../../styles/dashbord_body";
-import avi from "../../../../assets/img/user.png";
+import avi from "assets/img/user.png";
 
 export default function AcountSetting() {
   return (
@@ -41,14 +41,14 @@ export default function AcountSetting() {
             <div className="input-control">
               <label>Phone Number:</label>
               <div className="prefix">
-                <span class="input-group-addon">+234</span>
+                <span className="input-group-addon">+234</span>
                 <input type="text" />
               </div>
             </div>
             <div className="input-control">
               <label>Phone Number (Alternative):</label>
               <div className="prefix">
-                <span class="input-group-addon">+234</span>
+                <span className="input-group-addon">+234</span>
                 <input type="text" />
               </div>
             </div>

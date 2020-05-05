@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Colors from "../../../constants/Colors";
+import Colors from "constants/Colors";
 
 const SideBar = styled.section`
 	padding: 24% 7%;
@@ -18,12 +18,17 @@ const SideBar = styled.section`
 		-webkit-transition: 0.2s ease all;
 		-moz-transition: 0.2s ease all;
 		&.open {
-			margin-left: 0;
+			margin: 0;
+			padding: 0;
 		}
 	}
 `;
 SideBar.InnerCont = styled.section`
 	box-shadow: 0px 4px 9px rgba(81, 92, 111, 0.12);
+	@media only screen and (max-width: 720px) {
+		height: 100vh;
+		padding-top: 22px;
+	}
 `;
 
 SideBar.Header = styled.header`
@@ -50,7 +55,7 @@ SideBar.Header = styled.header`
 	}
 	@media only screen and (max-width: 720px) {
 		padding: 0 30px;
-		padding-left: 40px;
+		padding-left: 0;
 		margin: 20px 0;
 	}
 `;
@@ -64,9 +69,6 @@ SideBar.Avatar = styled.img`
   border: none;
   &.fill {
     object-fit: cover;
-  }
-  @media only screen and (max-width: 720px) {
-    display: none;
   }
 `;
 
@@ -116,9 +118,10 @@ SideBar.Links = styled.ul`
 	}
 	@media only screen and (max-width: 720px) {
 		border-radius: 0 30px 0 0;
-		padding: 30px;
-		padding-bottom: 15vh;
-		padding-left: 40px;
+		padding: 0;
+		padding-bottom: 0;
+		padding-left: 0;
+		margin-top: 77px;
 		li {
 			margin-bottom: 10px;
 		}
@@ -129,8 +132,9 @@ SideBar.TogggleButton = styled.button`
 	background-color: transparent;
 	border: none;
 	padding: 0;
-	margin: 0;
-	text-align: left;
+	margin: 11px;
+	text-align: right;
+	float: right;
 	@media only screen and (min-width: 721px) {
 		display: none;
 	}

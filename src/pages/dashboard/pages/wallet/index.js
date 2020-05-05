@@ -1,11 +1,11 @@
 import React from "react";
 import { Select } from "antd";
 import DashBoardBody from "../../styles/dashbord_body";
-import worldImage from "../../../../assets/img/wold.png";
-import masterImage from "../../../../assets/img/MasterCard.png";
-import visaImage from "../../../../assets/img/Visa.png";
-import verveImage from "../../../../assets/img/Verve.png";
-import walletImage from "../../../../assets/img/wallet-colored.png";
+import worldImage from "assets/img/wold.png";
+import masterImage from "assets/img/MasterCard.png";
+import visaImage from "assets/img/Visa.png";
+import verveImage from "assets/img/Verve.png";
+import walletImage from "assets/img/wallet-colored.png";
 
 const { Option } = Select;
 function handleChange(value) {
