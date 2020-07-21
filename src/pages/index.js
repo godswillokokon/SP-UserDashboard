@@ -15,11 +15,12 @@ import NoMatchPage from "./notFound";
 import Auth from "helpers/auth";
 
 const App = () => {
-  useEffect(() => {
-    if (!Auth.isLoggedIn()) {
-      window.location = "https://spread-staging.netlify.app/";
-    }
-  }, []);
+  console.log(Auth.token);
+  // useEffect(() => {
+  //   if (!Auth.isLoggedIn()) {
+  //     window.location = "https://spreadprolimited.com/";
+  //   }
+  // }, []);
   return (
     <Router>
       <Layout>

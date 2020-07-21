@@ -9,15 +9,17 @@ import reducers from "./rootReducer";
 // import asyncError from "../middleware/asyncError";
 
 // @ts-ignore
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers =
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const enhancers = composeEnhancers(applyMiddleware(reduxThunk, promise));
+const enhancers = composeEnhancers(
+  applyMiddleware(reduxThunk, promise)
+);
 
 const persistConfig = {
-	key: "spreadpro",
-	storage,
-	stateReconciler: autoMergeLevel2,
-	whitelist: ["auth", "user"],
+  key: "spreadpro",
+  storage,
+  stateReconciler: autoMergeLevel2,
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
