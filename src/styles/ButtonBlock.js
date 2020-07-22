@@ -3,8 +3,8 @@ import Colors from "../constants/Colors";
 import { Link } from "react-router-dom";
 
 const ButtonBlock = styled.button`
-  font-family: "GT Walsheim";
-  background-color: #100463;
+  
+  background-color: #fcad0a;
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
@@ -17,10 +17,13 @@ const ButtonBlock = styled.button`
   justify-content: center;
   padding: 0 30px;
   font-weight: 500;
+  ::hover{
+    color:#ff
+  }
   ${(props) =>
     props.bold &&
     css`
-      font-weight: 700;
+      font-weight: 800;
     `}
   ${(props) =>
     props.center &&
@@ -41,8 +44,8 @@ const ButtonBlock = styled.button`
   ${(props) =>
     props.link &&
     css`
-      color: ${Colors.ligtherpurple};
-      background: none;
+      color: #fff;
+      ackground: none;
       border: none;
       box-shadow: none;
     `}

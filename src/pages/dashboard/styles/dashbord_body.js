@@ -272,14 +272,15 @@ DashBoardBody.Form = styled.form`
     flex-direction: column;
     margin-bottom: 1rem;
   }
-  .input-control input {
+  .input-control input,
+  .input-control select {
     color: #515c6f;
     border: 1px solid #c1c1c1;
     box-sizing: border-box;
     border-radius: 10px;
     background: #fbfbfb;
     font-size: 16px;
-    height: 38px;
+    height: 50px;
     padding: 0rem 1rem;
     :focus {
       outline-style: none;

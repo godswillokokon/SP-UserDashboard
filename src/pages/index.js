@@ -11,6 +11,7 @@ import Layout from "./components/Layout";
 import SoldProperties from "./dashboard/pages/soldProp";
 import AccountSetting from "./dashboard/pages/settings";
 import ChangePassword from "./dashboard/pages/change_password";
+import BecomeAnAgent from "./dashboard/pages/become_agent.js";
 import NoMatchPage from "./notFound";
 import Auth from "helpers/auth";
 
@@ -41,6 +42,7 @@ const App = () => {
             component={ChangePassword}
             exact={true}
           />
+          <Route path="/become-agent" component={BecomeAnAgent} exact={true} />
           <Route exact path="/" component={() => <Redirect to="/wallet" />} />
           <Route component={NoMatchPage} />
         </Switch>
