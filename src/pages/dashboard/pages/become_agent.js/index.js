@@ -4,14 +4,19 @@ import Input from "components/input";
 import { useFormik } from "formik";
 import Select from "components/Select";
 import States from "data/states.json";
+import { useDispatch } from "react-redux";
+import { toastSuccess } from "utils/Toast";
+import { becomeAgent } from "store/User/actions";
 
 export default function ChangePassword() {
+  const dispatch = useDispatch();
   const id_type = [
     { name: "voters card" },
     { name: "National Id" },
     { name: "National Password" },
     { name: "Drivers' lience" },
   ];
+  const gender = [{ name: "Male" }, { name: "Male" }];
   const occupation = [
     { name: "Student" },
     { name: "Civil Servant" },
@@ -55,6 +60,9 @@ export default function ChangePassword() {
     if (!values.state_of_origin) {
       errors.state_of_origin = "State of origin is required";
     }
+    if (!values.gender) {
+      errors.gender = "Gender is required";
+    }
 
     return errors;
   };
@@ -66,17 +74,18 @@ export default function ChangePassword() {
       marital_status: "",
       lga: "",
       state_of_origin: "",
+      gender: "",
     },
     onSubmit: (values) => {
       console.log(values);
-      // dispatch(createAgent(values)).then((res) => {
-      //   if (res) {
-      //     toastSuccess(`Agent ${values.name} was created successfully`);
-      //     history.push({
-      //       pathname: "/admin/agent",
-      //     });
-      //   }
-      // });
+      dispatch(becomeAgent(values)).then((res) => {
+        if (res) {
+          toastSuccess(`Agent ${values.name} was created successfully`);
+          // history.push({
+          //   pathname: "/admin/agent",
+          // });
+        }
+      });
     },
     validate,
     validateOnChange: true,
@@ -212,6 +221,22 @@ export default function ChangePassword() {
                 onFocus={onInputFocus("lga")}
               />
             </div>
+          </div>
+          <div className="input-control">
+            <Select
+              name="gender"
+              id="gender"
+              fullWidth
+              label="GENDER"
+              options={gender}
+              onChange={(e) => {
+                form.setFieldValue("gender", e.target.value);
+              }}
+              value={form.values.gender}
+              error={!!form.errors.gender && form.touched.gender}
+              errorText={form.touched.gender ? form.errors.gender : undefined}
+              onFocus={onInputFocus("gender")}
+            />
           </div>
           <button>Submit</button>
         </DashBoardBody.Form>

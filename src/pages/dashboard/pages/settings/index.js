@@ -1,8 +1,10 @@
 import React from "react";
 import DashBoardBody from "../../styles/dashbord_body";
 import avi from "assets/img/user.png";
+import { useSelector } from "react-redux";
 
 export default function AcountSetting() {
+  const user = useSelector((state) => state.user.data);
   return (
     <>
       <DashBoardBody.Header>
@@ -12,8 +14,8 @@ export default function AcountSetting() {
         <DashBoardBody.SettingBanner>
           <div className="background">
             <div className="">
-              <h1>Erim, Anna Ndoma</h1>
-              <h2>annmikaerim@gmail.com</h2>
+              <h1>{user?.name}</h1>
+              <h2>{user?.email}</h2>
             </div>
           </div>
           <div className="circle">
@@ -23,26 +25,21 @@ export default function AcountSetting() {
         </DashBoardBody.SettingBanner>
 
         <DashBoardBody.Form>
-          <div className="input-group">
-            <div className="input-control">
-              <label>First Name:</label>
-              <input type="text" />
-            </div>
-            <div className="input-control">
-              <label>Last Name:</label>
-              <input type="text" />
-            </div>
+          <div className="input-control">
+            <label>First Name:</label>
+            <input type="text" value={user?.name} />
           </div>
+
           <div className="input-control">
             <label>Email:</label>
-            <input type="text" />
+            <input type="text" value={user?.email} disabled />
           </div>
           <div className="input-group">
             <div className="input-control">
               <label>Phone Number:</label>
               <div className="prefix">
                 <span className="input-group-addon">+234</span>
-                <input type="text" />
+                <input type="text" value={user?.phone} />
               </div>
             </div>
             <div className="input-control">

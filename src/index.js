@@ -6,11 +6,11 @@ import * as serviceWorker from "./serviceWorker";
 import Auth from "helpers/auth";
 
 const Root = () => {
-	return <App />;
+  return <App />;
 };
 
 Auth.init().then(() => {
-	ReactDOM.render(<Root />, document.getElementById("root"));
+  ReactDOM.render(<Root />, document.getElementById("root"));
 });
 
 serviceWorker.unregister();
