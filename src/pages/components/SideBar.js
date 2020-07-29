@@ -100,6 +100,12 @@ const userLink = [
     icon: require("../../assets/img/properties.png"),
     matchPaths: ["/bought-properties"],
   },
+  {
+    name: "Reserved Properties",
+    path: "/reserved-properties",
+    icon: require("../../assets/img/properties.png"),
+    matchPaths: ["/reserved-properties"],
+  },
 
   {
     name: "Mortgage",
@@ -133,6 +139,12 @@ const agentLink = [
     path: "/bought-properties",
     icon: require("../../assets/img/properties.png"),
     matchPaths: ["/bought-properties"],
+  },
+  {
+    name: "Reserved Properties",
+    path: "/reserved-properties",
+    icon: require("../../assets/img/properties.png"),
+    matchPaths: ["/reserved-properties"],
   },
   {
     name: "Sold Properties",

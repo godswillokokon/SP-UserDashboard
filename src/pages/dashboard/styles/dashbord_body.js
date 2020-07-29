@@ -182,14 +182,14 @@ DashBoardBody.WalletRecentActivity = styled.div`
 `;
 
 DashBoardBody.SoldCard = styled.div`
-  width: 283.15px;
+  width: 273.15px;
   margin-top: 1rem;
   margin-right: 1rem;
   display: flex;
   flex-direction: column;
   .sold-card .image,
   .sold-card .image img {
-    width: 100%;
+    width: 90%;
   }
   h1 {
     margin-top: 5px;

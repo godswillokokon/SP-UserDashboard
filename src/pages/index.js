@@ -14,14 +14,15 @@ import ChangePassword from "./dashboard/pages/change_password";
 import BecomeAnAgent from "./dashboard/pages/become_agent.js";
 import NoMatchPage from "./notFound";
 import Auth from "helpers/auth";
+import ReservedProperty from "./dashboard/pages/reservedpro";
 
 const App = () => {
   console.log(Auth.token);
-  // useEffect(() => {
-  //   if (!Auth.isLoggedIn()) {
-  //     window.location = "https://spreadprolimited.com/";
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (!Auth.isLoggedIn()) {
+      window.location = "https://spreadprolimited.com/";
+    }
+  }, []);
   return (
     <Router>
       <Layout>
@@ -35,6 +36,11 @@ const App = () => {
           <Route
             path="/account-settings"
             component={AccountSetting}
+            exact={true}
+          />
+          <Route
+            path="/reserved-properties"
+            component={ReservedProperty}
             exact={true}
           />
           <Route
