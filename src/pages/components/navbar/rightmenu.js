@@ -2,26 +2,32 @@ import React from "react";
 import { Menu } from "antd";
 import { Link } from "react-router-dom";
 
-const RightMenu = (props) => {
+const RightMenu = () => {
   return (
     <>
       <Menu mode="horizontal">
         <Menu.Item key="mail">
-          <Link to="https://spread-staging.netlify.com/">Home</Link>
+          <Link to="https://sp-web-sage.vercel.app/">Home</Link>
         </Menu.Item>
         <Menu.Item key="mail1">
-          <Link to="https://spread-staging.netlify.com/properties">
+          <Link to="https://sp-web-sage.vercel.app/properties">
             Properties
           </Link>
         </Menu.Item>
         <Menu.Item key="mail2">
-          <Link to="https://spread-staging.netlify.com/services">Services</Link>
+          <Link to="https://sp-web-sage.vercel.app/services">
+            Services
+          </Link>
         </Menu.Item>
         <Menu.Item key="mail3">
-          <Link to="https://spread-staging.netlify.com/about">About Us</Link>
+          <Link to="https://sp-web-sage.vercel.app/about">
+            About Us
+          </Link>
         </Menu.Item>
         <Menu.Item key="mail4">
-          <Link to="https://spread-staging.netlify.com/careers">Careers</Link>
+          <Link to="https://sp-web-sage.vercel.app/careers">
+            Careers
+          </Link>
         </Menu.Item>
       </Menu>
     </>

@@ -3,7 +3,10 @@ import { Menu, Button, Drawer } from "antd";
 import RightMenu from "./rightmenu";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import {
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+} from "@ant-design/icons";
 import "./index.css";
 import Logo from "assets/img/logo.png";
 import Mail from "assets/icons/mail.png";
@@ -119,7 +122,11 @@ const Navbar = () => {
             <div className="rightMenu">
               <RightMenu />
             </div>
-            <Button className="barsMenu" type="primary" onClick={drawer}>
+            <Button
+              className="barsMenu"
+              type="primary"
+              onClick={drawer}
+            >
               {React.createElement(
                 drawer ? MenuUnfoldOutlined : MenuFoldOutlined
               )}
@@ -137,25 +144,27 @@ const Navbar = () => {
             >
               <Menu mode="vertical">
                 <Menu.Item key="mail">
-                  <Link to="https://spread-staging.netlify.com/">Home</Link>
+                  <Link to="https://sp-web-sage.vercel.app/">
+                    Home
+                  </Link>
                 </Menu.Item>
                 <Menu.Item key="mail1">
-                  <Link to="https://spread-staging.netlify.com/properties">
+                  <Link to="https://sp-web-sage.vercel.app/properties">
                     Properties
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="mail2">
-                  <Link to="https://spread-staging.netlify.com/services">
+                  <Link to="https://sp-web-sage.vercel.app/services">
                     Services
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="mail3">
-                  <Link to="https://spread-staging.netlify.com/about">
+                  <Link to="https://sp-web-sage.vercel.app/about">
                     About Us
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="mail4">
-                  <Link to="https://spread-staging.netlify.com/careers">
+                  <Link to="https://sp-web-sage.vercel.app/careers">
                     Careers
                   </Link>
                 </Menu.Item>

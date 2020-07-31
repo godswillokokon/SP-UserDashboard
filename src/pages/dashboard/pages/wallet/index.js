@@ -6,12 +6,15 @@ import masterImage from "assets/img/MasterCard.png";
 import visaImage from "assets/img/Visa.png";
 import verveImage from "assets/img/Verve.png";
 import walletImage from "assets/img/wallet-colored.png";
+import { useSelector } from "react-redux";
 
 const { Option } = Select;
 function handleChange(value) {
   console.log(`selected ${value}`);
 }
 export default function Wallet() {
+  const user = useSelector((state) => state.user.data);
+
   return (
     <>
       <DashBoardBody.Header>
@@ -24,7 +27,7 @@ export default function Wallet() {
               <div className="circle">
                 <img src={walletImage} alt="" />
               </div>
-              <h3>ANN ERIM’S WALLET</h3>
+              <h3>{user?.name}</h3>
               <h2>Current account balance:</h2>
               <h1>15,000.00</h1>
             </div>
