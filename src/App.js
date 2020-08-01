@@ -2,9 +2,6 @@ import React from "react";
 import Routes from "./pages";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
-import { store, persistor } from "./store";
 
 const ToastConfig = {
   className: "toast__container",
@@ -19,13 +16,7 @@ const ToastConfig = {
 toast.configure(ToastConfig);
 
 function App() {
-  return (
-    <Provider store={store}>
-      <PersistGate persistor={persistor}>
-        <Routes />
-      </PersistGate>
-    </Provider>
-  );
+  return <Routes />;
 }
 
 export default App;

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -13,16 +13,9 @@ import AccountSetting from "./dashboard/pages/settings";
 import ChangePassword from "./dashboard/pages/change_password";
 import BecomeAnAgent from "./dashboard/pages/become_agent.js";
 import NoMatchPage from "./notFound";
-import Auth from "helpers/auth";
 import ReservedProperty from "./dashboard/pages/reservedpro";
 
 const App = () => {
-  console.log(Auth.token);
-  useEffect(() => {
-    if (!Auth.isLoggedIn()) {
-      window.location = "https://spreadprolimited.com/";
-    }
-  }, []);
   return (
     <Router>
       <Layout>
