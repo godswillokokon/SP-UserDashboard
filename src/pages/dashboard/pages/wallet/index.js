@@ -1,12 +1,17 @@
-import React from "react";
-import { Select } from "antd";
+import React, { useState } from "react";
+import { Select, Modal, Form, Input } from "antd";
 import DashBoardBody from "../../styles/dashbord_body";
 import worldImage from "assets/img/wold.png";
 import masterImage from "assets/img/MasterCard.png";
 import visaImage from "assets/img/Visa.png";
 import verveImage from "assets/img/Verve.png";
 import walletImage from "assets/img/wallet-colored.png";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { usePaystackPayment } from "react-paystack";
+import { fundWallet } from "store/wallet/actions";
+import { toastSuccess } from "utils/Toast";
+import NumberFormat from "react-number-format";
+import "./style.css";
 
 const { Option } = Select;
 function handleChange(value) {
@@ -14,9 +19,67 @@ function handleChange(value) {
 }
 export default function Wallet() {
   const user = useSelector((state) => state.user.data);
+  const [visible, setVisible] = useState(false);
+  const [charges, setCharges] = useState(0);
+  const [actualAmout, setactualAmout] = useState(0);
+  const [formData, setFormData] = useState({});
+  const dispatch = useDispatch();
 
+  const config = {
+    reference: "" + Math.floor(Math.random() * 1000000000 + 1),
+    email: user?.email,
+    amount: actualAmout * 100,
+    publicKey: "pk_test_cc5a16f36a9c190775dcc8eeefeeeddd3b209d46",
+  };
+  const initializePayment = usePaystackPayment(config);
+  const onSuccess = (res) => {
+    console.log("sksk");
+    formData.payment_plan = "save";
+    formData.reference = res.reference;
+    setFormData({ ...formData });
+    dispatch(fundWallet(formData)).then(() => {
+      setVisible(false);
+      toastSuccess(`You have Added ${actualAmout - charges} to your wallet`);
+    });
+    console.log(formData);
+  };
   return (
     <>
+      <Modal
+        title="Fund Your Wallet"
+        visible={visible}
+        onCancel={() => setVisible(!visible)}
+        onOk={() => initializePayment(onSuccess)}
+        okText="Fund Wallet"
+      >
+        <Form layout="vertical" className="form-modal">
+          <Form.Item
+            name="amount"
+            label="Amount"
+            rules={[{ required: true, message: "Please enter An amount" }]}
+          >
+            <NumberFormat
+              thousandSeparator={true}
+              prefix={"₦"}
+              placeholder="Enter amount"
+              onValueChange={(value) => {
+                let fees = (1.5 / 100) * value.value;
+
+                if (fees > 2000) {
+                  fees = 2000;
+                }
+
+                setCharges(fees);
+                setactualAmout(value.value);
+                formData.amount = value.value - charges;
+                setFormData({ ...formData });
+              }}
+            />
+            <br />
+            <span>Your fees is {charges}</span>
+          </Form.Item>
+        </Form>
+      </Modal>
       <DashBoardBody.Header>
         <h1>Wallet</h1>
       </DashBoardBody.Header>
@@ -40,7 +103,7 @@ export default function Wallet() {
               </div>
             </div>
           </div>
-          <div className="fund-wallet">
+          <div className="fund-wallet" onClick={() => setVisible(true)}>
             <span>Fund Wallet</span>
           </div>
         </DashBoardBody.Banner>

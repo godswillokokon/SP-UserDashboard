@@ -9352,6 +9352,18 @@ react-loading-skeleton@2.0.1:
   dependencies:
     "@emotion/core" "^10.0.22"
 
+react-number-format@^4.4.1:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/react-number-format/-/react-number-format-4.4.1.tgz#d5614dd25edfc21ed48b97356213440081437a94"
+  integrity sha512-ZGFMXZ0U7DcmQ3bSZY3FULOA1mfqreT9NIMYZNoa/ouiSgiTQiYA95Uj2KN8ge6BRr+ghA5vraozqWqsHZQw3Q==
+  dependencies:
+    prop-types "^15.7.2"
+
+react-paystack@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-paystack/-/react-paystack-3.0.1.tgz#520d3011a3f73923fa01e40733f35aac9cb9a2cc"
+  integrity sha512-b9Cnw/oNTWSunlCFjSMCz4RYV1/yzQgt4PZ5u+nQyu/+2F9cIFFoxJVnmk96awc0cyfYr33rdjaaK1t2dYiW7g==
+
 react-redux@7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.0.tgz#f970f62192b3981642fec46fd0db18a074fe879d"
