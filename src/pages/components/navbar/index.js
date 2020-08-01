@@ -3,10 +3,7 @@ import { Menu, Button, Drawer } from "antd";
 import RightMenu from "./rightmenu";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-} from "@ant-design/icons";
+import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./index.css";
 import Logo from "assets/img/logo.png";
 import Mail from "assets/icons/mail.png";
@@ -16,7 +13,8 @@ import IgIcon from "assets/icons/igSmall.png";
 import LinkedIn from "assets/icons/in.png";
 import Snap from "assets/icons/snapchat.png";
 import Twitter from "assets/icons/twitterSmall.png";
-import Auth from "helpers/auth";
+
+import { useSelector } from "react-redux";
 
 const Wrap = styled.div`
   display: block;
@@ -71,7 +69,8 @@ const Contacts = styled.div`
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-
+  const user = useSelector((state) => state.user.data);
+  console.log(user);
   const drawer = () => {
     setVisible(!visible);
   };
@@ -89,7 +88,7 @@ const Navbar = () => {
           zIndex: 10,
         }}
       >
-        {Auth?.user?.verified ? (
+        {!user?.verified ? (
           <div style={{ background: "yellow" }}>Verify Email</div>
         ) : (
           <Contacts>
@@ -122,11 +121,7 @@ const Navbar = () => {
             <div className="rightMenu">
               <RightMenu />
             </div>
-            <Button
-              className="barsMenu"
-              type="primary"
-              onClick={drawer}
-            >
+            <Button className="barsMenu" type="primary" onClick={drawer}>
               {React.createElement(
                 drawer ? MenuUnfoldOutlined : MenuFoldOutlined
               )}
@@ -144,9 +139,7 @@ const Navbar = () => {
             >
               <Menu mode="vertical">
                 <Menu.Item key="mail">
-                  <Link to="https://sp-web-sage.vercel.app/">
-                    Home
-                  </Link>
+                  <Link to="https://sp-web-sage.vercel.app/">Home</Link>
                 </Menu.Item>
                 <Menu.Item key="mail1">
                   <Link to="https://sp-web-sage.vercel.app/properties">

@@ -1,19 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import SideBarWrapper from "../dashboard/styles/SideBar";
 import Avatar from "assets/img/avatar.png";
 import { ReactComponent as CloseIcon } from "assets/img/close-icon-dark.svg";
 import Button from "components/Button";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchUserProfile } from "store/User/actions";
+import { useSelector } from "react-redux";
+// import { fetchUserProfile } from "store/User/actions";
 
 const SideBar = ({ showSideBar, setShowSideBar }) => {
   const user = useSelector((state) => state.user.data);
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchUserProfile());
-  }, [dispatch]);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(fetchUserProfile());
+  // }, [dispatch]);
 
   return (
     <SideBarWrapper className={showSideBar ? "open" : ""}>
@@ -24,10 +24,7 @@ const SideBar = ({ showSideBar, setShowSideBar }) => {
           <CloseIcon width={15} />
         </SideBarWrapper.TogggleButton>
         <SideBarWrapper.Header>
-          <SideBarWrapper.Avatar
-            src={user?.picture || Avatar}
-            alt="avatar"
-          />
+          <SideBarWrapper.Avatar src={user?.picture || Avatar} alt="avatar" />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <h4 className="user-name">{user?.name || "User"}</h4>
             {/* <h5 className="logout">Logout</h5> */}
@@ -39,9 +36,7 @@ const SideBar = ({ showSideBar, setShowSideBar }) => {
                 <li
                   key={index}
                   className={
-                    window.location.pathname === `${link.path}`
-                      ? "active"
-                      : ""
+                    window.location.pathname === `${link.path}` ? "active" : ""
                   }
                 >
                   <img src={link.icon} alt={link.name} />
@@ -60,9 +55,7 @@ const SideBar = ({ showSideBar, setShowSideBar }) => {
                 <li
                   key={index}
                   className={
-                    window.location.pathname === `${link.path}`
-                      ? "active"
-                      : ""
+                    window.location.pathname === `${link.path}` ? "active" : ""
                   }
                 >
                   <img src={link.icon} alt={link.name} />
